@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th8 03, 2021 lúc 05:21 AM
+-- Thời gian đã tạo: Th8 11, 2021 lúc 05:27 AM
 -- Phiên bản máy phục vụ: 10.4.11-MariaDB
 -- Phiên bản PHP: 7.4.5
 
@@ -31,17 +31,20 @@ CREATE TABLE `login` (
   `id` int(11) NOT NULL,
   `user_name` varchar(50) NOT NULL,
   `password` varchar(50) NOT NULL,
-  `name` varchar(50) NOT NULL
+  `name` varchar(255) NOT NULL,
+  `image` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Đang đổ dữ liệu cho bảng `login`
 --
 
-INSERT INTO `login` (`id`, `user_name`, `password`, `name`) VALUES
-(6, 'admin', 'a3590023df66ac92ae35e3316026d17d', 'Admin'),
-(7, 'highend', 'e10adc3949ba59abbe56e057f20f883e', 'Highend'),
-(8, 'user', 'e10adc3949ba59abbe56e057f20f883e', 'User');
+INSERT INTO `login` (`id`, `user_name`, `password`, `name`, `image`) VALUES
+(12, 'sa', 'e10adc3949ba59abbe56e057f20f883e', 'Yen Sa', '1.png'),
+(13, 'nam', 'e10adc3949ba59abbe56e057f20f883e', 'Hoang Nam', '1.png'),
+(14, 'ngan', 'e10adc3949ba59abbe56e057f20f883e', 'Phuong Ngan', '4.png'),
+(15, 'luan', 'e10adc3949ba59abbe56e057f20f883e', 'Le Luan', '4.png'),
+(16, 'phuong', 'e10adc3949ba59abbe56e057f20f883e', 'Tran Phuong', '5.png');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -61,7 +64,7 @@ ALTER TABLE `login`
 -- AUTO_INCREMENT cho bảng `login`
 --
 ALTER TABLE `login`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
