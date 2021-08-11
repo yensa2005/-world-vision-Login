@@ -14,7 +14,9 @@
 
 </head>
 
-<body class="img js-fullheight" style="background-image: url(images/bg.jpg);">
+<body class="img js-fullheight" style="background-image: url(images/bg.jpg); background-repeat: no-repeat;
+  background-position: right top;
+  background-attachment: fixed;">
     <section class="ftco-section">
         <div class="container">
             <div class="row justify-content-center">

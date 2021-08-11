@@ -3,7 +3,7 @@ session_start();
 include "db_conn.php";
 
 if (isset($_POST['uname']) && isset($_POST['password'])
-    && isset($_POST['name']) && isset($_POST['re_password'])) {
+    && isset($_POST['name']) && isset($_POST['re_password'])&& isset($_POST['profileImage'])) {
 
 	function validate($data){
        $data = trim($data);
@@ -17,6 +17,7 @@ if (isset($_POST['uname']) && isset($_POST['password'])
 
 	$re_pass = validate($_POST['re_password']);
 	$name = validate($_POST['name']);
+	$profileImage = validate($_POST['profileImage']);
 
 	$user_data = 'uname='. $uname. '&name='. $name;
 
@@ -55,7 +56,7 @@ if (isset($_POST['uname']) && isset($_POST['password'])
 			header("Location: signup.php?error=The username is taken try another&$user_data");
 	        exit();
 		}else {
-           $sql2 = "INSERT INTO login(user_name, password, name) VALUES('$uname', '$pass', '$name')";
+           $sql2 = "INSERT INTO login(user_name, password, name, image) VALUES('$uname', '$pass', '$name', '$profileImage')";
            $result2 = mysqli_query($conn, $sql2);
            if ($result2) {
            	 header("Location: signup.php?success=Your account has been created successfully");
